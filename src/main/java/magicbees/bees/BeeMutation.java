@@ -63,14 +63,10 @@ public class BeeMutation {
 		
 		beeMutationFactory.createMutation(BeeSpecies.ARCANE.getSpecies(), BeeSpecies.SUPERNATURAL.getSpecies(), BeeSpecies.ETHEREAL.getGenome(), 7);
 		
-		beeMutationFactory.createMutation(BeeSpecies.SUPERNATURAL.getSpecies(), BeeSpecies.ETHEREAL.getSpecies(), BeeSpecies.WINDY.getGenome(), 14)
-				.requireResource("treeLeaves");
-		beeMutationFactory.createMutation(BeeSpecies.SUPERNATURAL.getSpecies(), BeeSpecies.ETHEREAL.getSpecies(), BeeSpecies.WATERY.getGenome(), 14)
-				.requireResource(Blocks.water, 0);
-		beeMutationFactory.createMutation(BeeSpecies.SUPERNATURAL.getSpecies(), BeeSpecies.ETHEREAL.getSpecies(), BeeSpecies.EARTHY.getGenome(), 14)
-				.requireResource(Blocks.brick_block, 0);
-		beeMutationFactory.createMutation(BeeSpecies.SUPERNATURAL.getSpecies(), BeeSpecies.ETHEREAL.getSpecies(), BeeSpecies.FIREY.getGenome(), 14)
-				.requireResource(Blocks.lava, 0);
+		beeMutationFactory.createMutation(BeeSpecies.SUPERNATURAL.getSpecies(), BeeSpecies.ETHEREAL.getSpecies(), BeeSpecies.WINDY.getGenome(), 14);
+		beeMutationFactory.createMutation(BeeSpecies.SUPERNATURAL.getSpecies(), BeeSpecies.ETHEREAL.getSpecies(), BeeSpecies.WATERY.getGenome(), 14);
+		beeMutationFactory.createMutation(BeeSpecies.SUPERNATURAL.getSpecies(), BeeSpecies.ETHEREAL.getSpecies(), BeeSpecies.EARTHY.getGenome(), 14);
+		beeMutationFactory.createMutation(BeeSpecies.SUPERNATURAL.getSpecies(), BeeSpecies.ETHEREAL.getSpecies(), BeeSpecies.FIREY.getGenome(), 14);
 		
 		beeMutationFactory.createMutation(BeeSpecies.ETHEREAL.getSpecies(), BeeSpecies.ATTUNED.getSpecies(), BeeSpecies.AWARE.getGenome(), 10);
 		beeMutationFactory.createMutation(BeeSpecies.ETHEREAL.getSpecies(), BeeSpecies.AWARE.getSpecies(), BeeSpecies.SPIRIT.getGenome(), 8);
@@ -132,41 +128,30 @@ public class BeeMutation {
 		beeMutationFactory.createMutation(BeeSpecies.MYSTICAL.getSpecies(), BeeSpecies.MUTABLE.getSpecies(), BeeSpecies.INVISIBLE.getGenome(), 15);
 		
 		if (BeeSpecies.COPPER.isActive()) {
-			beeMutationFactory.createMutation(Allele.getBaseSpecies("Industrious"), Allele.getBaseSpecies("Meadows"), BeeSpecies.COPPER.getGenome(), 12)
-					.requireResource("blockCopper");
+			beeMutationFactory.createMutation(Allele.getBaseSpecies("Industrious"), Allele.getBaseSpecies("Meadows"), BeeSpecies.COPPER.getGenome(), 12);
 		}
 		
 		if (BeeSpecies.TIN.isActive()) {
-			beeMutationFactory.createMutation(Allele.getBaseSpecies("Industrious"), Allele.getBaseSpecies("Forest"), BeeSpecies.TIN.getGenome(), 12)
-					.requireResource("blockTin");
+			beeMutationFactory.createMutation(Allele.getBaseSpecies("Industrious"), Allele.getBaseSpecies("Forest"), BeeSpecies.TIN.getGenome(), 12);
 		}
 		
-		beeMutationFactory.createMutation(Allele.getBaseSpecies("Common"), Allele.getBaseSpecies("Industrious"), BeeSpecies.IRON.getGenome(), 12)
-				.requireResource(Blocks.iron_block, 0);
+		beeMutationFactory.createMutation(Allele.getBaseSpecies("Common"), Allele.getBaseSpecies("Industrious"), BeeSpecies.IRON.getGenome(), 12);
 		
 		if (BeeSpecies.LEAD.isActive()) {
 			baseA = (BeeSpecies.TIN.isActive()) ? BeeSpecies.TIN.getSpecies() : (BeeSpecies.COPPER.isActive()) ? BeeSpecies.COPPER.getSpecies() : BeeSpecies.IRON.getSpecies();
 			mutation = beeMutationFactory.createMutation(baseA, Allele.getBaseSpecies("Common"), BeeSpecies.LEAD.getGenome(), 10);
-			if (OreDictionary.getOres("blockLead").size() > 0) {
-				mutation.requireResource("blockLead");
-			}
 		}
 
 		if (BeeSpecies.SILVER.isActive()) {
 			mutation = beeMutationFactory.createMutation(Allele.getBaseSpecies("Imperial"), Allele.getBaseSpecies("Modest"), BeeSpecies.SILVER.getGenome(), 8);
-			if (OreDictionary.getOres("blockSilver").size() > 0) {
-				mutation.requireResource("blockSilver");
-			}
 		}
 		
 		baseA = (BeeSpecies.EE_MINIUM.isActive()) ? BeeSpecies.EE_MINIUM.getSpecies() : Allele.getBaseSpecies("Imperial");
 		baseB = (BeeSpecies.LEAD.isActive()) ? BeeSpecies.LEAD.getSpecies() : BeeSpecies.IRON.getSpecies();
-		beeMutationFactory.createMutation(baseA, baseB, BeeSpecies.GOLD.getGenome(), 8)
-				.requireResource(Blocks.gold_block, 0);
+		beeMutationFactory.createMutation(baseA, baseB, BeeSpecies.GOLD.getGenome(), 8);
 		
 		if (BeeSpecies.ALUMINUM.isActive()) {
-			beeMutationFactory.createMutation(Allele.getBaseSpecies("Industrious"), Allele.getBaseSpecies("Cultivated"), BeeSpecies.ALUMINUM.getGenome(), 10)
-					.requireResource("blockAluminum");
+			beeMutationFactory.createMutation(Allele.getBaseSpecies("Industrious"), Allele.getBaseSpecies("Cultivated"), BeeSpecies.ALUMINUM.getGenome(), 10);
 		}
 		
 		if (BeeSpecies.ARDITE.isActive()) {
@@ -199,18 +184,12 @@ public class BeeMutation {
 			baseA = (BeeSpecies.SILVER.isActive()) ? BeeSpecies.SILVER.getSpecies() : Allele.getBaseSpecies("Imperial");
 			baseB = (BeeSpecies.COBALT.isActive()) ? BeeSpecies.COBALT.getSpecies() : BeeSpecies.INFERNAL.getSpecies();
 			mutation = beeMutationFactory.createMutation(baseA, baseB, BeeSpecies.OSMIUM.getGenome(), 11);
-			if (OreDictionary.getOres("blockOsmium").size() > 0) {
-				mutation.requireResource("blockOsmium");
-			}
 		}
 		
-		beeMutationFactory.createMutation(Allele.getBaseSpecies("Austere"), BeeSpecies.GOLD.getSpecies(), BeeSpecies.DIAMOND.getGenome(), 7)
-				.requireResource("blockDiamond");
+		beeMutationFactory.createMutation(Allele.getBaseSpecies("Austere"), BeeSpecies.GOLD.getSpecies(), BeeSpecies.DIAMOND.getGenome(), 7);
 		baseA = (BeeSpecies.SILVER.isActive()) ? BeeSpecies.SILVER.getSpecies() : Allele.getBaseSpecies("Imperial");
-		beeMutationFactory.createMutation(Allele.getBaseSpecies("Austere"), baseA, BeeSpecies.EMERALD.getGenome(), 6)
-				.requireResource("blockEmerald");
-		beeMutationFactory.createMutation(Allele.getBaseSpecies("Rural"), BeeSpecies.COPPER.getSpecies(), BeeSpecies.APATITE.getGenome(), 12)
-				.requireResource("blockApatite");
+		beeMutationFactory.createMutation(Allele.getBaseSpecies("Austere"), baseA, BeeSpecies.EMERALD.getGenome(), 6);
+		beeMutationFactory.createMutation(Allele.getBaseSpecies("Rural"), BeeSpecies.COPPER.getSpecies(), BeeSpecies.APATITE.getGenome(), 12);
 		
 		if (BeeSpecies.SILICON.isActive()) {
 			baseA = (BeeSpecies.AE_SKYSTONE.isActive()) ? BeeSpecies.AE_SKYSTONE.getSpecies() : BeeSpecies.EARTHY.getSpecies();
@@ -298,37 +277,27 @@ public class BeeMutation {
 		}
 		
 		if (RedstoneArsenalHelper.isActive()) {
-			beeMutationFactory.createMutation(BeeSpecies.TE_ELECTRUM.getSpecies(), BeeSpecies.TE_DESTABILIZED.getSpecies(), BeeSpecies.RSA_FLUXED.getGenome(), 10)
-					.requireResource("blockElectrumFlux");
+			beeMutationFactory.createMutation(BeeSpecies.TE_ELECTRUM.getSpecies(), BeeSpecies.TE_DESTABILIZED.getSpecies(), BeeSpecies.RSA_FLUXED.getGenome(), 10);
 		}
 		
 		if (ThermalModsHelper.isActive()) {
-			beeMutationFactory.createMutation(BeeSpecies.TIN.getSpecies(), BeeSpecies.COPPER.getSpecies(), BeeSpecies.TE_BRONZE.getGenome(), 12)
-					.requireResource("blockBronze");
+			beeMutationFactory.createMutation(BeeSpecies.TIN.getSpecies(), BeeSpecies.COPPER.getSpecies(), BeeSpecies.TE_BRONZE.getGenome(), 12);
 			
-			beeMutationFactory.createMutation(BeeSpecies.GOLD.getSpecies(), BeeSpecies.SILVER.getSpecies(), BeeSpecies.TE_ELECTRUM.getGenome(), 10)
-					.requireResource("blockElectrum");
+			beeMutationFactory.createMutation(BeeSpecies.GOLD.getSpecies(), BeeSpecies.SILVER.getSpecies(), BeeSpecies.TE_ELECTRUM.getGenome(), 10);
 			
-			beeMutationFactory.createMutation(BeeSpecies.IRON.getSpecies(), BeeSpecies.ESOTERIC.getSpecies(), BeeSpecies.TE_NICKEL.getGenome(), 14)
-					.requireResource("blockNickel");
+			beeMutationFactory.createMutation(BeeSpecies.IRON.getSpecies(), BeeSpecies.ESOTERIC.getSpecies(), BeeSpecies.TE_NICKEL.getGenome(), 14);
 			
-			beeMutationFactory.createMutation(BeeSpecies.IRON.getSpecies(), BeeSpecies.TE_NICKEL.getSpecies(), BeeSpecies.TE_INVAR.getGenome(), 14)
-					.requireResource("blockInvar");
+			beeMutationFactory.createMutation(BeeSpecies.IRON.getSpecies(), BeeSpecies.TE_NICKEL.getSpecies(), BeeSpecies.TE_INVAR.getGenome(), 14);
 			
-			beeMutationFactory.createMutation(BeeSpecies.TE_NICKEL.getSpecies(), BeeSpecies.TE_INVAR.getSpecies(), BeeSpecies.TE_PLATINUM.getGenome(), 10)
-					.requireResource("blockPlatinum");
+			beeMutationFactory.createMutation(BeeSpecies.TE_NICKEL.getSpecies(), BeeSpecies.TE_INVAR.getSpecies(), BeeSpecies.TE_PLATINUM.getGenome(), 10);
 			
-			beeMutationFactory.createMutation(BeeSpecies.TIN.getSpecies(), BeeSpecies.COPPER.getSpecies(), BeeSpecies.TE_BRONZE.getGenome(), 12)
-					.requireResource("blockBronze");
+			beeMutationFactory.createMutation(BeeSpecies.TIN.getSpecies(), BeeSpecies.COPPER.getSpecies(), BeeSpecies.TE_BRONZE.getGenome(), 12);
 			
-			beeMutationFactory.createMutation(BeeSpecies.SPITEFUL.getSpecies(), BeeSpecies.TIN.getSpecies(), BeeSpecies.TE_COAL.getGenome(), 12)
-					.requireResource(Blocks.coal_ore, 0);
+			beeMutationFactory.createMutation(BeeSpecies.SPITEFUL.getSpecies(), BeeSpecies.TIN.getSpecies(), BeeSpecies.TE_COAL.getGenome(), 12);
 			
-			beeMutationFactory.createMutation(BeeSpecies.SPITEFUL.getSpecies(), Allele.getBaseSpecies("Industrious"), BeeSpecies.TE_DESTABILIZED.getGenome(), 12)
-					.requireResource(Blocks.redstone_ore, 0);
+			beeMutationFactory.createMutation(BeeSpecies.SPITEFUL.getSpecies(), Allele.getBaseSpecies("Industrious"), BeeSpecies.TE_DESTABILIZED.getGenome(), 12);
 			
-			beeMutationFactory.createMutation(BeeSpecies.SMOULDERING.getSpecies(), BeeSpecies.INFERNAL.getSpecies(), BeeSpecies.TE_LUX.getGenome(), 12)
-					.requireResource(Blocks.glowstone, 0);
+			beeMutationFactory.createMutation(BeeSpecies.SMOULDERING.getSpecies(), BeeSpecies.INFERNAL.getSpecies(), BeeSpecies.TE_LUX.getGenome(), 12);
 			
 			beeMutationFactory.createMutation(BeeSpecies.SMOULDERING.getSpecies(), Allele.getBaseSpecies("Austere"), BeeSpecies.TE_DANTE.getGenome(), 12)
 					.restrictBiomeType(BiomeDictionary.Type.NETHER);
@@ -347,8 +316,7 @@ public class BeeMutation {
 
 			beeMutationFactory.createMutation(BeeSpecies.TE_PLATINUM.getSpecies(), BeeSpecies.OBLIVION.getSpecies(), BeeSpecies.TE_WINSOME.getGenome(), 12);
 
-			beeMutationFactory.createMutation(BeeSpecies.TE_WINSOME.getSpecies(), BeeSpecies.TE_COAL.getSpecies(), BeeSpecies.TE_ENDEARING.getGenome(), 8)
-					.requireResource("blockEnderium");
+			beeMutationFactory.createMutation(BeeSpecies.TE_WINSOME.getSpecies(), BeeSpecies.TE_COAL.getSpecies(), BeeSpecies.TE_ENDEARING.getGenome(), 8);
 		}
 		
 		if (BotaniaHelper.isActive()) {
@@ -366,8 +334,7 @@ public class BeeMutation {
 		
 		if (AppliedEnergisticsHelper.isActive()) {
 			if (BeeSpecies.AE_SKYSTONE.isActive()) {
-				beeMutationFactory.createMutation(BeeSpecies.EARTHY.getSpecies(), BeeSpecies.WINDY.getSpecies(), BeeSpecies.AE_SKYSTONE.getGenome(), 20)
-					.requireResource(AppliedEnergisticsHelper.skystone, 0);
+				beeMutationFactory.createMutation(BeeSpecies.EARTHY.getSpecies(), BeeSpecies.WINDY.getSpecies(), BeeSpecies.AE_SKYSTONE.getGenome(), 20);
 			}
 		}
 	}
